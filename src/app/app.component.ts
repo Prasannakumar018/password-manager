@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { SafeResourceUrl } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 declare var $: any; 
 
 
@@ -29,7 +30,7 @@ export class AppComponent {
 
 
   data: { website: string; password: string; passwordFieldType: string }[] = [ ];
-
+  constructor(private router: Router) {}
 
 
   ngOnInit() {
@@ -154,4 +155,10 @@ export class AppComponent {
           this.data = [...this.data];
         }
     }
+
+    logout() {
+      localStorage.removeItem('isAuthenticated');
+      this.router.navigate(['/login']); // ✅ Redirect to login page
+    }
+    
   }
