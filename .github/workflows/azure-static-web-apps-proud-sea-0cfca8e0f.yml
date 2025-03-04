@@ -32,7 +32,7 @@ jobs:
           # api_location: "" # Api source code path - optional
           # output_location: "docs" # Built app content directory - optional
           # app_location: "docs"  # Point to your app's actual location
-          output_location: ""  # No separate build output directory needed
+          output_location: "dist/password-manager"  # No separate build output directory needed
 
           ###### End of Repository/Build Configurations ######
 
